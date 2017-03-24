@@ -10,7 +10,7 @@ sqoop list-tables --connect "jdbc:mysql://localhost/training" --username trainin
 
 sqoop eval --connect "jdbc:mysql://localhost/training" --username training --password training --query "SELECT * FROM countries"
 
-### 													PART 1 OF CERTIFICATION: SQOOP IMPORT
+### PART 1 OF CERTIFICATION: SQOOP IMPORT
 
 # SQOOP IMPORT Commands
 
