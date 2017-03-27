@@ -8,11 +8,11 @@ Repository to store commands used for performing various objectives mentioned in
 
 The skills to transfer data between external systems and your cluster. This includes the following:
 
-- [ ] Import data from a MySQL database into HDFS using Sqoop
+- [X] Import data from a MySQL database into HDFS using Sqoop
 
-- [ ] Export data to a MySQL database from HDFS using Sqoop
+- [X] Export data to a MySQL database from HDFS using Sqoop
 
-- [ ] Change the delimiter and file format of data during import using Sqoop
+- [X] Change the delimiter and file format of data during import using Sqoop
 
 - [ ] Ingest real-time and near-real-time streaming data into HDFS
 
