@@ -1,0 +1,9 @@
+# Commands for running Flume job by connecting HDFS Sink
+
+# Run this command to create a connection after updating the sink to HDFS in example.conf file
+flume-ng agent -n a1 -c /home/training/flume/conf/ -f /home/training/flume/conf/example.conf
+
+#After the job starts running on 44444 port, run the following command in another terminal
+telnet localhost 44444 
+
+# Enter the data and then check the file created at path /user/cloudera/flume
