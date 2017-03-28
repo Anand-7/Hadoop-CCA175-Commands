@@ -1,0 +1,10 @@
+# Commands to load data into HDFS
+
+# copyFromLocal Command
+hadoop fs -copyFromLocal /home/training/test_data.txt /user/cloudera/data
+
+# put Command
+hadoop fs -put /home/training/test_data.txt /user/cloudera/data
+
+# put Command to overwrite the file if it already exists
+hadoop fs -put -f /home/training/test_data.txt /user/cloudera/data
