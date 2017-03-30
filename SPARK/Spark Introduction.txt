@@ -1,0 +1,10 @@
+# SPARK INTRODUCTION
+
+# Command for creating a soft link in spark conf 
+ln -s /etc/hive/conf/hive-site.xml /etc/spark/conf/hive-site.xml
+
+# Command to query a HIVE table from spark-shell using HIVE context
+sqlContext.sql("select * from department").collect().foreach(println)
+
+# Command to get the count from a HIVE table from spark-shell using HIVE context
+sqlContext.sql("select * from department").count() 
