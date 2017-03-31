@@ -1,0 +1,7 @@
+# Command to submit PySpark application
+
+# In Yarn Mode
+spark-submit --master yarn saveFile.py
+
+# In Local Mode
+spark-submit --master local saveFile.py
