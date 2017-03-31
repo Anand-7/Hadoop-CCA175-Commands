@@ -1,0 +1,10 @@
+# Commands for using a Hive/SQL table through Pyspark 
+
+from pyspark.sql import SQLContext
+from pyspark.sql import HiveContext
+
+sqlContext = HiveContext(sc)
+depts = sqlContext.sql("select * from department")
+
+for rec in depts.collect():
+    print(rec)
