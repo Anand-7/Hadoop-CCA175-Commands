@@ -1,0 +1,8 @@
+# Command to print records using SPARK
+
+# Scala Command
+sc.textFile("/user/cloudera/departments").collect().foreach(println)
+
+# Python Command
+for rec in sc.textFile("/user/cloudera/departments").collect():
+    print rec
