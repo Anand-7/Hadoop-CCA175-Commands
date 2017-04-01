@@ -1,0 +1,13 @@
+# Command to read and save text files
+
+# Reading a file from hadoop file system
+sc.textFile("/user/cloudera/departments")
+
+# Reading a file from hadoop file system into a variable
+data = sc.textFile("/user/cloudera/departments")
+
+for i in data.collect():
+    print(i)
+
+# Saving a text file into hadoop file system
+data.saveAsTextFile("/user/cloudera/pyspark/departmentsText")

@@ -1,0 +1,28 @@
+# Commands for reading and saving HIVE and JSON data
+
+# Commands for reading HIVE data
+from pyspark.sql import HiveContext
+sqlContext = HiveContext(sc)
+
+data = sqlContext.sql("select * from department")
+for i in data.collect():
+    print(i)
+
+#We can run hive INSERT, LOAD and any valid hive query in Hive context
+
+# Commands for reading JSON Data in HDFS
+
+from pyspark import SQLContext
+sqlContext = SQLContext(sc)
+departmentsJson = sqlContext.jsonFile("/user/cloudera/pyspark/departments.json")
+departmentsJson.registerTempTable("departmentsTable")
+departmentsData = sqlContext.sql("select * from departmentsTable")
+
+for rec in departmentsData.collect():
+  print(rec)
+
+#Writing data in json format
+departmentsData.toJSON().saveAsTextFile("/user/cloudera/pyspark/departmentsJson")
+
+#Validating the data
+hadoop fs -cat /user/cloudera/pyspark/departmentsJson/part*

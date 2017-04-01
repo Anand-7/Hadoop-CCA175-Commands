@@ -1,0 +1,17 @@
+# Commands to save and read as sequence file
+
+#Commands to save as SequenceFile
+data.map(lambda x: (None, x)).saveAsSequenceFile("/user/cloudera/pyspark/departmentsSeq")
+
+#Commands to save as SequenceFile with key-value pair based on delimiter
+data.map(lambda x: tuple(x.split(",", 1))).saveAsSequenceFile("/user/cloudera/pyspark/departmentsSeq")
+
+#Commands to read as SequenceFile
+dataSeq = sc.sequenceFile("/user/cloudera/pyspark/departmentsSeq")
+
+# Saving as sequence file using HadoopAPI
+path="/user/cloudera/pyspark/departmentsSeq"
+data.map(lambda x: tuple(x.split(",", 1))).saveAsNewAPIHadoopFile(path,"org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat",keyClass="org.apache.hadoop.io.Text",valueClass="org.apache.hadoop.io.Text")
+
+# Reading as sequence file using HadoopAPI
+dataSeq = sc.sequenceFile("/user/cloudera/pyspark/departmentsSeq", "org.apache.hadoop.io.IntWritable", "org.apache.hadoop.io.Text")

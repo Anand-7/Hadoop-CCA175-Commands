@@ -24,7 +24,7 @@ The skills to transfer data between external systems and your cluster. This incl
 
 Convert a set of data values in a given format stored in HDFS into new data values or a new data format and write them into HDFS.
 
-- [ ] Load RDD data from HDFS for use in Spark applications
+- [X] Load RDD data from HDFS for use in Spark applications
 
 - [ ] Write the results from an RDD back into HDFS using Spark
 
