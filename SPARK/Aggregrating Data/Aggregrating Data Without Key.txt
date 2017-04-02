@@ -1,0 +1,29 @@
+# Calculate aggregate statistics (e.g., average or sum) using Spark
+#sum
+ordersRDD = sc.textFile("/user/sqoop_import/orders") 
+ordersRDD.count()
+
+orderItemsRDD = sc.textFile("/user/sqop_import/order_items")
+orderItemsMap = orderItemsRDD.map(lambda rec: float(rec.split(",")[4]))
+for i in orderItemsMap.take(5):
+  print i
+
+orderItemsReduce = orderItemsMap.reduce(lambda rev1, rev2: rev1 + rev2)
+
+#Get max priced product from products table
+#There is one record which is messing up default , delimiters
+#Clean it up (we will see how we can filter with out deleting the record later)
+hadoop fs -get /user/cloudera/sqoop_import/products
+#Delete the record with product_id 685
+hadoop fs -put -f products/part* /user/cloudera/sqoop_import/products
+
+#pyspark script to get the max priced product
+productsRDD = sc.textFile("/user/sqoop_import/products")
+productsMap = productsRDD.map(lambda rec: rec)
+productsMap.reduce(lambda rec1, rec2: (rec1 if((rec1.split(",")[4] != "" and rec2.split(",")[4] != "") and float(rec1.split(",")[4]) >= float(rec2.split(",")[4])) else rec2))
+
+#avg
+revenue = sc.textFile("/user/sqop_import/order_items").map(lambda rec: float(rec.split(",")[4])).reduce(lambda rev1, rev2: rev1 + rev2)
+totalOrders = sc.textFile("/user/sqop_import/order_items").map(lambda rec: int(rec.split(",")[1])).distinct().count()
+
+

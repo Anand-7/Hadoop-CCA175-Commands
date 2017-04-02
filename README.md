@@ -44,7 +44,7 @@ Use Spark SQL to interact with the metastore programmatically in your applicatio
 
 - [ ] Write queries that calculate aggregate statistics
 
-- [ ] Join disparate datasets using Spark
+- [X] Join disparate datasets using Spark
 
 - [ ] Produce ranked or sorted data
 
