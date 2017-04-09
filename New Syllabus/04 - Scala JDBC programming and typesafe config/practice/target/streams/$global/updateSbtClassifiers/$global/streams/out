@@ -10,6 +10,7 @@
 [debug] == resolving dependencies default#practice$sbt_2.10;1.0->org.scala-sbt#sbt;0.13.14 [default->default(compile)]
 [info] Resolving org.scala-sbt#sbt;0.13.14 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.14 {default=[default(compile)]}
+[debug] no default cache defined: set to C:\Users\varun\.ivy2\cache
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.14
 [debug] 	found org.scala-sbt#sbt;0.13.14 in sbt-chain
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]}
@@ -1778,9 +1779,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.14!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
-[debug] :: resolution report :: resolve 2570ms :: artifacts dl 121ms
+[debug] :: resolution report :: resolve 4799ms :: artifacts dl 101ms
 [debug] 	report for default#practice$sbt_2.10;1.0 default produced in C:\Users\varun\IdeaProjects\practice\target\resolution-cache\reports\default-practice$sbt_2.10-default.xml
-[debug] 	resolve done (2570ms resolve - 121ms download)
+[debug] 	resolve done (4799ms resolve - 101ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#practice$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -2458,6 +2459,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#logic;0.13.14!logic.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#classfile;0.13.14!classfile.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#cross;0.13.14!cross.jar(src)
-[debug] :: resolution report :: resolve 554ms :: artifacts dl 119ms
+[debug] :: resolution report :: resolve 571ms :: artifacts dl 136ms
 [debug] 	report for default#practice$sources_2.10;1.0 default produced in C:\Users\varun\IdeaProjects\practice\target\resolution-cache\reports\default-practice$sources_2.10-default.xml
-[debug] 	resolve done (554ms resolve - 119ms download)
+[debug] 	resolve done (571ms resolve - 136ms download)

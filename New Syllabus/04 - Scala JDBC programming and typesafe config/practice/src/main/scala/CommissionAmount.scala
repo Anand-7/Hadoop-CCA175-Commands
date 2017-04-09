@@ -2,6 +2,7 @@
   * Created by varun on 09-04-2017.
   */
 import java.sql.DriverManager
+import com.typesafe.config._
 
 case class EmployeesCommission(first_name: String,
                                last_name: String,
@@ -21,10 +22,15 @@ case class EmployeesCommission(first_name: String,
 
 object CommissionAmount {
   def main(args: Array[String]): Unit = {
+    val props = ConfigFactory.load()
     val driver = "com.mysql.jdbc.Driver"
-    val url = "jdbc:mysql://nn01.itversity.com:3306/hr"
-    val username = "hr_ro"
-    val password = "itversity"
+    val host = props.getConfig(args(0)).getString("host")
+    val port = props.getConfig(args(0)).getString("port")
+    val db = props.getConfig(args(0)).getString("db")
+
+    val url = "jdbc:mysql://" + host + ":" + port + "/" + db
+    val username = props.getConfig(args(0)).getString("user")
+    val password = props.getConfig(args(0)).getString("pw")
 
     Class.forName(driver);
     val connection = DriverManager.getConnection(url, username, password)
@@ -39,6 +45,5 @@ object CommissionAmount {
       resultSet.getDouble("commission_pct"))
       println(e)
     }
-
   }
 }

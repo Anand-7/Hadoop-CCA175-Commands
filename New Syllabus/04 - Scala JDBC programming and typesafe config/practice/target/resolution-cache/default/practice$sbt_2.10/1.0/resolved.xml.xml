@@ -4,7 +4,7 @@
 		module="practice$sbt_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20170408064507"
+		publication="20170409145645"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>
