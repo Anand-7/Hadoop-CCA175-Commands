@@ -7,5 +7,8 @@
     <SOURCES>
       <root url="jar://$USER_HOME$/.ivy2/cache/mysql/mysql-connector-java/srcs/mysql-connector-java-5.1.41-sources.jar!/" />
     </SOURCES>
+    <excluded>
+      <root url="jar://$USER_HOME$/.ivy2/cache/mysql/mysql-connector-java/srcs/mysql-connector-java-5.1.41-sources.jar!/" />
+    </excluded>
   </library>
 </component>
